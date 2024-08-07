@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark-Mode</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --background-color: #fff;
+        --text-color: #1c1c1d;
+        --base-variant: #e8e9ed;
+        --secondary-text: #232738;
+        --primary-color: #3a435d;
+        --accent-color: #0071ff;
+        --about-us: var(--base-variant);
+        --h2-color: palegreen;
+      }
+      .darkMode {
+        --background-color: #070b1d;
+        --text-color: #ffffff;
+        --base-variant: #777171;
+        --secondary-text: #a4a5b8;
+        --primary-color: #3a435d;
+        --accent-color: #0071ff;
+        --about-us: cyan;
+        --h2-color: lime;
+      }
+      html {
+        font-family: poppins;
+        font-size: 12pt;
+      }
+      body {
+        background-color: var(--background-color);
+        color: var(--text-color);
+        min-height: 100vh;
+        transition: 400ms;
+      }
+      .toggle {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--base-variant);
+        display: flex;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 2em;
+        top: 1em;
+      }
+      .toggle svg{
+        fill: var(--primary-color);
+      }
+      .toggle svg:last-child{
+        display: none;
+      }
+      .darkMode .toggle svg:first-child{
+        display: none;
+      }
+      .darkMode .toggle svg:last-child{
+        display: block;
+      }
+      .container {
+        padding: 2em;
+      }
+      .wrap:nth-child(1) {
+        margin-bottom: 2em;
+        border-radius: 12px;
+        padding: 2em;
+      }
+      .wrap:last-child h2 {
+        color: var(--h2-color);
+      }
+      .wrap:nth-child(2) {
+        background-color: var(--primary-color);
+        border-radius: 12px;
+        padding: 2em;
+        color: var(--about-us);
+      }
+      h2 {
+        padding: 0.3em;
+      }
+      p {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      button {
+        text-transform: uppercase;
+        padding: 12px 15px;
+        margin: 0.4em;
+        margin-top: 1em;
+        cursor: pointer;
+        border: none;
+        color: aliceblue;
+        font-size: 16px;
+        font-family: poppins;
+        border-radius: 5px;
+        transition: 300ms;
+      }
+      button:hover {
+        filter: brightness(95%);
+      }
+      .premium {
+        background-color: var(--accent-color);
+      }
+      .info {
+        background-color: var(--secondary-text);
+      }
+
+      a{
+        color: #e8e9ed;
+        text-decoration: none;
+      }
+
+      @media screen and (max-width: 500px) {
+        .toggle {
+          right: 1em;
+        }
+        .toggle svg {
+          transform: scale(1);
+        }
+        .container {
+          padding: 1em;
+        }
+        .wrap:nth-child(1) {
+          margin-bottom: 1em;
+          padding: 1em;
+        }
+        .wrap:nth-child(2) {
+          padding: 1em;
+        }
+        h2 {
+          padding: 0.3em;
+        }
+        p {
+          font-size: 14px;
+        }
+        button {
+          text-transform: uppercase;
+          padding: 12px 15px;
+          margin: 0.4em;
+          margin-top: 1em;
+          cursor: pointer;
+          border: none;
+          color: aliceblue;
+          font-size: 16px;
+          font-family: poppins;
+          border-radius: 5px;
+          transition: 300ms;
+        }
+        button:hover {
+          filter: brightness(95%);
+        }
+        .premium {
+          background-color: var(--accent-color);
+        }
+        .info {
+          background-color: var(--secondary-text);
+        }
+      }
+      @media screen and (max-width: 800px) {
+        .toggle {
+          right: 1em;
+        }
+        .toggle svg {
+          transform: scale(1);
+        }
+        .container {
+          padding: 1em;
+        }
+        .wrap:nth-child(1) {
+          margin-bottom: 1em;
+          padding: 1em;
+        }
+        .wrap:nth-child(2) {
+          padding: .6em;
+        }
+        h2 {
+          padding: 0.2em;
+        }
+        p {
+          font-size: 14px;
+        }
+        button {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toggle">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 -960 960 960"
+        width="24px"
+        fill="#e8eaed"
+      >
+        <path
+          d="M440-760v-160h80v160h-80Zm266 110-55-55 112-115 56 57-113 113Zm54 210v-80h160v80H760ZM440-40v-160h80v160h-80ZM254-652 140-763l57-56 113 113-56 54Zm508 512L651-255l54-54 114 110-57 59ZM40-440v-80h160v80H40Zm157 300-56-57 112-112 29 27 29 28-114 114Zm283-100q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Z"
+        />
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 -960 960 960"
+        width="24px"
+        fill="#e8eaed"
+      >
+        <path
+          d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"
+        />
+      </svg>
+    </div>
+    <div class="container">
+      <div class="wrap">
+        <h2>Some Random Stories</h2>
+        <p>
+       A doctor was working at a hospital, a hospital where the patients were tagged with coloured bands. Green: alive. Red: deceased.
+
+One night, the doctor was instructed to get a few supplies from the basement of the hospital, and so he headed to the lift. The lift doors opened and there was a patient inside, minding her own business. Patients were allowed to roam around the hospital to stretch, especially those who have stayed long. The rule was to be back in their rooms before ten.
+
+The doctor smiled at the patient before pressing the number for the basement. He found it unusual that the woman didn’t have a button already pressed. He wondered if she was heading to the basement too.
+
+The lift finally reached the floor where the doors opened. In the distance a man was limping towards the elevator, and in a panic the doctor slammed the elevator button to close. It finally did and the lift began to ascend back up, the doctor’s heart pounding.
+
+“Why did you do that? He was trying to use the lift.” The woman stated, annoyed.
+
+“Did you see his wrist?” The doctor asked, “It was red. He died last night. I would know because I did his surgery.”
+
+The woman lifted her wrist. He saw red. She smiled. “Like this one?”
+
+
+        </p>
+        <button class="premium">Go Premium</button>
+        <button class="info">More Info</button>
+      </div>
+      <div class="wrap">
+        <h2>A mother’s call</h2>
+        <p>
+        A daughter was in her room upstairs, doing her homework, when suddenly she heard her mother call to come down for dinner. She jumped onto her feet and began making her way towards the stairs, but before even took a step, hands grabbed her and pulled her into the laundry room besides the staircase.
+
+She panicked before realizing it was her mother, her real mother, eyes watery and bloodshot. “Don’t go down there honey, I heard it too.”
+        </p>
+        <button class="info"><a href="https://dyatmika.org/students/my-favourite-short-scary-stories/" target="_blank">Get in touch</a></button>
+      </div>
+    </div>
+
+    <script>
+        // Variable 
+       let themeSwitch=document.querySelector(".toggle")
+       let dark =localStorage.getItem("darkMode")
+
+      function enable(){
+        document.body.classList.add("darkMode")
+        localStorage.setItem("darkMode","active")
+      }
+
+        function disable(){
+        document.body.classList.remove("darkMode")
+        localStorage.setItem("darkMode","null")
+      }
+      
+     if(dark==="active")enable()
+
+       themeSwitch.addEventListener("click",()=>{
+       let dark =localStorage.getItem("darkMode")
+        dark !=="active" ? enable() : disable()
+       })
+    </script>
+  </body>
+</html
